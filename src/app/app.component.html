@@ -1,0 +1,24 @@
+<app-header (sideNavToggle)="sidenav.toggle()"></app-header>
+
+<mat-sidenav-container class="menu-container">
+  <mat-sidenav #sidenav mode="side" [opened]="true">
+
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="'/home'"> Home </a>
+      <a mat-list-item [routerLink]="'/home'"> Invoices </a>
+      <a mat-list-item [routerLink]="'/home'"> Add product </a>
+      <a mat-list-item [routerLink]="'/home'" [matMenuTriggerFor]="menu"> Profile </a>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>profile</button>
+        <button mat-menu-item>contacts</button>
+        <button mat-menu-item>Logout</button>
+      </mat-menu>
+    </mat-nav-list>
+
+  </mat-sidenav>
+  
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

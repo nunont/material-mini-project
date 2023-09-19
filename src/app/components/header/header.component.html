@@ -1,0 +1,16 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="onToggleSidenav()">
+        <mat-icon>menu</mat-icon>
+    </button>
+
+    <div>
+        <a mat-button [routerLink]="'/accounts'"> Home </a>
+        <a mat-button [routerLink]="'/tasks'"> Tasks</a>
+        <a mat-button [routerLink]="'/contacts'"> About </a>
+    </div>
+    <span class="menu-spacer"></span>
+    <div>
+        <a mat-button [routerLink]="'/accounts'"> Register </a>
+        <a mat-button [routerLink]="'/accounts'"> Login</a>
+    </div>
+</mat-toolbar>

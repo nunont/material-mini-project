@@ -1,0 +1,8 @@
+.cdk-drag-placeholder {
+    opacity: 0;
+}
+
+.item {
+    margin-bottom: 10px;
+    cursor: pointer;
+}

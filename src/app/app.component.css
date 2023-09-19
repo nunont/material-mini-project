@@ -1,0 +1,11 @@
+.menu-container {
+    position: absolute;
+    top: var(--mat-toolbar-standard-height);
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+mat-sidenav {
+    width: 200px;
+}
