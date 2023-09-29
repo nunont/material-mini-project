@@ -1,6 +1,7 @@
 import { CdkDragDrop, transferArrayItem } from '@angular/cdk/drag-drop';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Task } from 'src/app/interfaces/task';
 
 @Component({
@@ -9,7 +10,7 @@ import { Task } from 'src/app/interfaces/task';
   styleUrls: ['./tasks.component.css'],
 })
 
-export class TasksComponent {
+export class TasksComponent implements OnInit {
   showMessage = false;
   submitted = false;
 
@@ -27,6 +28,14 @@ export class TasksComponent {
   inProgress: Task[] = [];
 
   done: Task[] = [];
+
+  constructor(private router : Router){
+  }
+
+  ngOnInit(): void {
+    let s = this.router.getCurrentNavigation()?.extras;
+    throw new Error('Method not implemented.');
+  }
 
   addTaskForm = new FormGroup({
     title: new FormControl('', [Validators.required, Validators.minLength(5)]),

@@ -9,13 +9,22 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './components/header/header.component';
 import { TaskComponent } from './components/task/task.component';
 import { TasksComponent } from './components/tasks/tasks.component';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
+
+import { AngularFireAuth, AngularFireAuthModule } from "@angular/fire/compat/auth";
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from 'src/environments/environment.development';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     TaskComponent,
-    TasksComponent
+    TasksComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +32,9 @@ import { TasksComponent } from './components/tasks/tasks.component';
     BrowserAnimationsModule,
     FormsModule, // <-- FormsModule is required for two-way binding
     MaterialModule, // <-- Material module,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireModule,
+    AngularFireModule.initializeApp(environment.firebase),
   ],
   providers: [],
   bootstrap: [AppComponent]
